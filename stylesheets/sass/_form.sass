@@ -1,0 +1,66 @@
+@import config
+
+.form
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__input
+    font-size: 1.2rem
+    width: 11rem
+    border: $formInputBorder
+    border-radius: 7px
+    color: $formInputColor
+    padding: 0.2rem 1rem
+    margin: 0.5rem 0
+
+  &__input:hover,
+  &__button:hover
+    outline: 0
+
+  &__button
+    font-size: 1.2rem
+    border-radius: 7px
+    border: $formButtonBorder
+    background-color: $formButtonBackgroundColor
+    color: $formButtonColor
+    cursor: pointer
+    margin: 0.5rem 0
+
+    &--login
+      width: 13rem
+
+    &--register
+      width: 13rem
+      background-color: $buttonRegister
+      border-color: $buttonRegister
+
+    &--register-back
+      width: 13rem
+      background-color: $buttonRegisterBack
+      border-color: $buttonRegisterBack
+
+  &__label
+    font-size: 1.2rem
+    color: $labelColor
+
+  &__confirmation
+    color: $formMessage
+    height: 1rem
+
+@media only screen and (min-width: $screen-md-min)
+  .form
+    &__input
+      width: 20rem
+
+    &__button
+
+      &--login
+        width: 22rem
+
+      &--register
+        width: 22rem
+
+      &--register-back
+        width: 22rem

@@ -1,0 +1,123 @@
+@import config
+
+.duck
+  display: flex
+  flex-direction: column
+  align-items: center
+  position: relative
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+    padding: 0
+    justify-content: center
+
+  &--litle
+    height: 100%
+    display: flex
+    justify-content: center
+    margin-top: 4rem
+    position: relative
+
+  &__description--litle
+    text-align: justify
+    padding: 0 1rem
+    margin: 0.2rem
+
+  &__title
+    color: $duckTitleColor
+    text-align: center
+    font-size: 1.5rem
+
+  &__image
+    width: 10rem
+
+  &__container-buttons
+    display: flex
+    align-items: center
+    width: 7rem
+    justify-content: space-between
+
+  &__button
+    background-color: $duckButtonBackgroundColor
+    color: white
+    padding: 0.2rem 0.3rem
+    border-radius: 7px
+    border: 0
+    font-size: 1.2rem
+
+  &__button--back
+    background-color: $duckButtonBackgroundColorBack
+    padding: 0.15rem 1rem
+    cursor: pointer
+
+  &--clicked
+    width: 18rem
+    height: 17rem
+    justify-content: space-between
+    position: relative
+
+  &__favorite
+    color: red
+    font-size: 2rem
+    position: absolute
+    z-index: 0
+    right: 1rem
+    top: 2rem
+    cursor: pointer
+    padding: 0
+    border: 0
+    background: none
+    outline: none
+
+    &--litle
+      top: 2rem
+
+// Small tablets (portrait view)
+@media only screen and (min-width: $screen-sm-min)
+  .duck
+    margin: 4rem 4rem 0 4rem
+
+    &--clicked
+      height: 26rem
+
+    &__list
+      margin: 0 2rem
+      padding-top: 2rem
+
+    &__image
+      width: 15rem
+
+    &--litle
+      max-width: 40rem
+      margin: 0 auto
+      padding-top: 11rem
+      display: flex
+      height: 80%
+
+    &__container-buttons
+      width: 9rem
+
+    &__button
+      font-size: 1.5rem
+
+    &__button--back
+      padding: 0.2rem 1rem
+
+    &__title
+      font-size: 1.7rem
+
+    &__description--litle
+      font-size: 1.5rem
+
+    &__favorite
+      top: 3rem
+      right: 0
+
+      &--litle
+        top: 2rem
+
+      &--detail
+        right: 43px
+        top: 22rem
+        font-size: 3rem
