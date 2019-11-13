@@ -1,0 +1,9 @@
+include ../results-item/index
+
+mixin results(results, favPath, detailPath)
+  section.view
+    .view__list
+      ul.duck__list
+        each result in results
+          +results-item(result, favPath, detailPath)
+

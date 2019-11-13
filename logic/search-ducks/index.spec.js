@@ -118,7 +118,7 @@ describe('logic - search ducks', () => {
       })
   })
 
-  it('should fail on incorrect query or expression types', () => {
+  it('should fail on incorrect query', () => {
     // TODO cases when id and token have values diff from non-empty string
 
     expect(() => { searchDucks(id, token, 1) }).to.throw(TypeError, '1 is not a string')

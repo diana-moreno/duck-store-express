@@ -2,12 +2,12 @@ const call = require('../../helpers/call')
 const validate = require('../../utils/validate')
 
 module.exports = function(id, token, duckId) {
-  if (typeof id !== 'string') throw new TypeError(id + ' is not a string')
-  if (!id.trim().length) throw new ContentError('id is empty or blank')
-  if (typeof token !== 'string') throw new TypeError(token + ' is not a string')
-  if (!token.trim().length) throw new ContentError('token is empty or blank')
-  if (typeof duckId !== 'string') throw new TypeError(duckId + ' is not a string')
-  if (!duckId.trim().length) throw new ContentError('duck id is empty or blank')
+  validate.string(id)
+  validate.string.notVoid('id', id)
+  validate.string(token)
+  validate.string.notVoid('token', token)
+  validate.string(duckId)
+  validate.string.notVoid('duck id', duckId)
 
   return new Promise((resolve, reject) => {
       call('GET', undefined, `https://duckling-api.herokuapp.com/api/ducks/${duckId}`, undefined, result => {

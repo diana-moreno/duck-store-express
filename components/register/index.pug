@@ -1,0 +1,18 @@
+extends ../view/index
+include ../feedback/index
+
+block body
+  section.view.view__register
+    img.view__register--image(src="pato-goma-amarillo-plano-brillante_23-2148275403.jpg" alt="")
+    h2.view__register--title Please, introduce your details
+    form.form.form--login(method="post" action=path)
+      input.form__input(type="text" name="name" placeholder="name")
+      input.form__input(type="text" name="surname" placeholder="surname")
+      input.form__input(type="text" name="email" placeholder="email")
+      input.form__input(type="password" name="password" placeholder="password")
+      button.form__button.form__button--register Create account
+    a(href=login)
+      button.form__button.form__button--register-back Back to login
+    .feedback
+      if error
+        +feedback(error)

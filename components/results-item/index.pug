@@ -1,0 +1,14 @@
+mixin results-item(item, favPath, detailPath)
+  - const { id, title, imageUrl, price, isFav } = item
+  li.duck.duck--clicked
+    form.duck__favorite(method="post" action=favPath)
+      input(type="hidden" name="id" value=id)
+      button.duck__favorite(type="submit")
+        if isFav
+          i.fas.fa-heart
+        else
+          i.far.fa-heart
+    h1.duck__title=title
+    a(href=`${detailPath}/${id}`)
+      img.duck__image(src=imageUrl)
+    button.duck__button=price

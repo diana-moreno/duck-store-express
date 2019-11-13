@@ -19,7 +19,7 @@ module.exports = function(id, token, duckId) {
       index > -1 ? favs.splice(index, 1) : favs.push(duckId)
 
       call('PUT', token, `https://skylabcoders.herokuapp.com/api/user/${id}`, { favs }, result => {
-        result.error ? reject(new Error(result.error)) : resolve(result)
+        result.error ? reject(new Error(result.error)) : resolve()
       })
     })
   })

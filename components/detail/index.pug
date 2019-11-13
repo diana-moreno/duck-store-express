@@ -1,0 +1,20 @@
+include ../results-item/index
+
+mixin detail(item, backPath, favPath, id)
+  - const { isFav } = item
+  .duck.duck--litle
+    .duck
+      form.duck__favorite.duck__favorite--litle(method="post" action=favPath)
+        input(type="hidden" name="id" value=item.id)
+        button.duck__favorite.duck__favorite--litle(type="submit")
+          if isFav
+            i.fas.fa-heart
+          else
+            i.far.fa-heart
+      h1.duck__title=item.title
+      img.duck__image(src=item.imageUrl)
+      p.duck__description.duck__description--litle=item.description
+      .duck__container-buttons
+        p.duck__button=item.price
+        form(method="get" action=backPath)
+          button.duck__button.duck__button--back ◀

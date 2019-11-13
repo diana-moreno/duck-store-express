@@ -1,4 +1,4 @@
-module.exports = function({ item, lastPath, favPath, id, isFav }) {
+module.exports = function({ item, backPath, favPath, id, isFav }) {
   return (
     `<div class='duck duck--litle'>
       <div class='duck'>
@@ -16,7 +16,7 @@ module.exports = function({ item, lastPath, favPath, id, isFav }) {
         <p class='duck__description duck__description--litle'>${item.description}</p>
         <div class='duck__container-buttons'>
           <p class='duck__button'>${item.price}</p>
-          <form method='get' action="${lastPath}">
+          <form method='get' action="${backPath}">
             <button class='duck__button duck__button--back'>◀</button>
           </form>
         </div>

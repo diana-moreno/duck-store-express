@@ -1,0 +1,16 @@
+extends ../view/index
+include ../feedback/index
+
+block body
+  .view.view__login
+    h1.view__login--title Duck Store
+    form.form.form--login(method="POST" action=path)
+      input.form__input(type="text" name="username" placeholder="email")
+      input.form__input(type="password" name="password" placeholder="password")
+      button.form__button.form__button--login(type="submit") Login
+    a(href=register)
+      button.form__button.form__button--register Create account
+    .feedback
+      if error
+        +feedback(error)
+    img.view__login--image(src="pato-madre-plano-patitos_23-2148282441.jpg" alt="family-ducks")
